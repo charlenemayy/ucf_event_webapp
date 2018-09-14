@@ -13,14 +13,17 @@ def home():
         return "Login Success"
 
 
-@app.route('/login', methods=['POST'])
+@app.route("/login", methods=['POST'])
 def do_login():
-    if request.form['password'] == 'password' and request.form['user'] == 'user':
+    if request.form['password'] == 'password' and request.form['username'] == 'user':
         session['logged_in'] = True
     else:
         flash('Wrong Password')
     return home()
 
+@app.route("/logout")
+def do_logout():
+    session['logged_in'] = True
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)

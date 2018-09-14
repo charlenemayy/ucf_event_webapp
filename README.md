@@ -1,4 +1,4 @@
-installation instructions
+mysql installation/run instructions
 
 brew install mysql
 brew services start mysql
