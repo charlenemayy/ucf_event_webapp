@@ -21,9 +21,12 @@ def do_login():
         flash('Wrong Password')
     return home()
 
+
+# create a button that links to this url route
 @app.route("/logout")
 def do_logout():
-    session['logged_in'] = True
+    session['logged_in'] = False
+    return home()
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
